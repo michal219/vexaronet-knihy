@@ -18,7 +18,7 @@
 
 <header class="nav"><div class="wrap">
   <a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Vexaronet</b><small>Nakladatelství</small></span></a>
-  <ul><li><a href="#vyzkousejte">Vyzkoušejte</a></li><li><a href="#novinka">Novinka</a></li><li><a href="#katalog">Katalog</a></li><li><a href="#nakup">Jak nakoupit</a></li><li><a href="#autori">Pro autory</a></li><li><a href="#faq">Otázky</a></li></ul>
+  <ul><li><a href="#knihy">Knihy</a></li><li><a href="#vyzkousejte">Vyzkoušejte</a></li><li><a href="#katalog">Katalog</a></li><li><a href="#nakup">Jak nakoupit</a></li><li><a href="#autori">Pro autory</a></li><li><a href="#faq">Otázky</a></li></ul>
   <a class="btn sm" href="#katalog">Katalog e-booků</a>
 </div></header>
 
@@ -28,17 +28,14 @@
     <h1 class="serif rv d1">E-booky, podle kterých věci <em>opravdu uděláte.</em></h1>
     <p class="sub rv d2">Vydáváme praktické české průvodce krok za krokem. Žádná vata, žádná teorie navíc – jen postup, který vás dovede k výsledku.</p>
     <div class="cta rv d3">
-      <a class="btn" href="#vyzkousejte">✦ Vyzkoušet AI v akci</a>
-      <a class="btn ghost" href="#zdarma">1. kapitola zdarma</a>
+      <a class="btn" href="#knihy">Prohlédnout e-booky →</a>
+      <a class="btn ghost" href="#knihy">Naše knihy</a>
     </div>
   </div>
-  <div class="stage rv d2">
-    <div class="ring"></div><div class="ring r2"></div>
-    <div data-book="vlastni-web-pomoci-ai" data-cls="float back"></div>
-    <div data-book="vlastni-e-shop-pomoci-ai" data-cls="float front"></div>
-    <div class="chip c1"><b>2 e-booky</b>web a e-shop</div>
-    <div class="chip c2"><b>Krok za krokem</b>s pomocí AI</div>
-    <div class="chip c3"><b>Ihned</b>ke stažení</div>
+  <div class="duo-books rv d2">
+    <a class="db" href="/kniha/vlastni-web-pomoci-ai/"><div data-book="vlastni-web-pomoci-ai"></div><span>Vlastní web pomocí AI</span></a>
+    <a class="db" href="/kniha/vlastni-e-shop-pomoci-ai/"><span class="nb">Novinka</span><div data-book="vlastni-e-shop-pomoci-ai"></div><span>Vlastní e-shop pomocí AI</span></a>
+    <div class="shelf-line"></div>
   </div>
 </div><div class="scroll">Scroll</div></section>
 
@@ -47,28 +44,40 @@
   <span>Krok za krokem</span><span>Česky a srozumitelně</span><span>Okamžité stažení</span><span>Ověřené postupy</span><span>Bonusy ke každé knize</span><span>Praktické e-booky</span>
 </div></div>
 
+<section class="books2" id="knihy"><div class="wrap">
+  <span class="eyebrow">Naše knihy</span>
+  <h2 class="serif">Dva průvodci, jedna cesta</h2>
+  <p class="lead">Začněte webem, pokračujte e-shopem. Každá kniha obstojí i samostatně.</p>
+  <div class="b2grid">
+    <article class="b2 rv">
+      <div class="b2shelf"><div data-book="vlastni-web-pomoci-ai"></div></div>
+      <div class="b2body">
+        <span class="eyebrow">Technologie</span>
+        <h3 class="serif">Vlastní web pomocí AI</h3>
+        <p>Od nápadu k hotovému webu bez znalosti programování. Instalace nástrojů, první stránka, design, formulář, zveřejnění, doména a Google.</p>
+        <div class="meta"><span>76 stran</span><span>13 kapitol</span><span>Ukázkový web</span><span>69 + 20 promptů</span></div>
+        <div class="priceline"><span class="p" data-price="vlastni-web-pomoci-ai"></span><a class="btn" data-buy="vlastni-web-pomoci-ai">Koupit</a><a class="btn ghost" href="#listovat" data-flip="vlastni-web-pomoci-ai">Listovat</a><a class="btn ghost" href="/kniha/vlastni-web-pomoci-ai/">Detail →</a></div>
+      </div>
+    </article>
+    <article class="b2 rv d1">
+      <div class="b2shelf"><span class="badge">Novinka</span><div data-book="vlastni-e-shop-pomoci-ai"></div></div>
+      <div class="b2body">
+        <span class="eyebrow">Podnikání</span>
+        <h3 class="serif">Vlastní e-shop pomocí AI</h3>
+        <p>Od prvního produktu k první objednávce. Katalog, košík, platby kartou přes Stripe, doprava, právní minimum a spuštění na vlastní doméně.</p>
+        <div class="meta"><span>58 stran</span><span>13 kapitol</span><span>Ukázkový e-shop</span><span>25 + 20 promptů</span></div>
+        <div class="priceline"><span class="p" data-price="vlastni-e-shop-pomoci-ai"></span><a class="btn" data-buy="vlastni-e-shop-pomoci-ai">Koupit</a><a class="btn ghost" href="#listovat" data-flip="vlastni-e-shop-pomoci-ai">Listovat</a><a class="btn ghost" href="/kniha/vlastni-e-shop-pomoci-ai/">Detail →</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
 <section class="demo" id="vyzkousejte"><div class="wrap">
   <span class="eyebrow" style="color:var(--t)">Vyzkoušejte si to</span>
   <h2 class="serif">Napíšete, co chcete. <em style="color:var(--t)">AI postaví web.</em></h2>
   <p class="lead">Vyberte obor, případně napište název své firmy, a podívejte se, jak zhruba vypadá práce, kterou vás e-book naučí.</p>
   <div id="demo"></div>
   <div class="demo-act"><a class="btn" href="/kniha/vlastni-web-pomoci-ai/">Chci se to naučit →</a><a class="btn ghost" href="#listovat" data-flip="vlastni-web-pomoci-ai">Listovat ukázkou</a></div>
-</div></section>
-
-<section class="feature" id="novinka"><div class="wrap">
-  <div class="shelfbox rv"><div class="stage" style="height:auto"><div data-book="vlastni-e-shop-pomoci-ai" data-cls="float"></div></div></div>
-  <div>
-    <span class="eyebrow rv">Novinka · Podnikání</span>
-    <h2 class="serif rv d1">Vlastní e-shop pomocí AI</h2>
-    <p class="lead rv d1">Od prvního produktu k první objednávce bez znalosti programování. Katalog, košík, platby kartou přes Stripe, doprava, právní minimum a spuštění na vlastní doméně – bez měsíčního paušálu za e-shopovou platformu.</p>
-    <div class="meta rv d2"><span>58 stran PDF</span><span>13 kapitol</span><span>Ukázkový e-shop</span><span>25 + 20 promptů</span><span>Autor: Tým Vexaronet</span></div>
-    <div class="priceline rv d3">
-      <span class="p" data-price="vlastni-e-shop-pomoci-ai"></span>
-      <a class="btn" data-buy="vlastni-e-shop-pomoci-ai">Koupit e-book</a>
-      <a class="btn ghost" href="#listovat" data-flip="vlastni-e-shop-pomoci-ai">Listovat ukázkou</a>
-      <a class="btn ghost" href="/kniha/vlastni-e-shop-pomoci-ai/">Více o knize →</a>
-    </div>
-  </div>
 </div></section>
 
 <section class="free" id="zdarma" style="padding:64px 0"><div class="wrap">

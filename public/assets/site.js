@@ -315,3 +315,12 @@ document.querySelectorAll('.ba').forEach(ba => {
     let t0 = null; const anim = ts => { t0 = t0 || ts; const k = (ts - t0) / 1600; if (k >= 1) { set(50); r.value = 50; return; } const v = 50 + Math.sin(k * Math.PI * 2) * 22; set(v); r.value = v; requestAnimationFrame(anim); }; requestAnimationFrame(anim); }, { threshold: .5 });
   io.observe(ba);
 });
+
+/* naklánění knih v úvodu a v sekci Naše knihy podle myši */
+document.querySelectorAll('.duo-books .db, .b2').forEach(el => {
+  const book = el.querySelector('.book3d'); if (!book || !matchMedia('(hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const base = { rx: parseFloat(getComputedStyle(book).getPropertyValue('--rx')) || -8, ry: parseFloat(getComputedStyle(book).getPropertyValue('--ry')) || -28 };
+  el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+    book.classList.add('live'); book.style.setProperty('--rx', (base.rx - py * 14) + 'deg'); book.style.setProperty('--ry', (base.ry + px * 36) + 'deg'); });
+  el.addEventListener('pointerleave', () => { book.classList.remove('live'); book.style.setProperty('--rx', base.rx + 'deg'); book.style.setProperty('--ry', base.ry + 'deg'); });
+});
