@@ -41,7 +41,7 @@ window.KNIHY = [
     stran: 58,
     kapitol: 13,
     format: 'PDF + bonusy',
-    novinka: true,
+    novinka: false,
     obalka: '/img/knihy/vlastni-eshop/obalka.jpg',
     zadni: '/img/knihy/vlastni-eshop/zadni.jpg',
     hrbet: '#0b2545',
@@ -51,5 +51,25 @@ window.KNIHY = [
     ukazka: ['01','04','05','06','07','23','25','30','31','39','40','55','56','99'].map(n => `/img/knihy/vlastni-eshop/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-eshop'
     cena: ''       // např. '449 Kč'
+  },
+  {
+    id: 'vlastni-aplikace-pomoci-ai',
+    nazev: 'Vlastní aplikace pomocí AI',
+    podtitul: 'Od nápadu k funkční aplikaci s přihlášením a databází, bez znalosti programování',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Technologie',
+    stran: 52,
+    kapitol: 10,
+    format: 'PDF (A5) + ukázková aplikace',
+    novinka: true,
+    obalka: '/img/knihy/vlastni-aplikace/obalka.jpg',
+    zadni: '/img/knihy/vlastni-aplikace/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/vlastni-aplikace-pomoci-ai/',
+    perex: 'Evidence zakázek s přihlášením a databází: návrh, Supabase, zabezpečení dat, testování a zveřejnění.',
+    ukazka: ['01','04','05','06','07','19','20','23','24','31','32','48','49','99'].map(n => `/img/knihy/vlastni-aplikace/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-aplikace'
+    cena: ''       // např. '399 Kč'
   }
 ];
