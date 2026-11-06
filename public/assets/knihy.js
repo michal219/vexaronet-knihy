@@ -61,7 +61,7 @@ window.KNIHY = [
     stran: 52,
     kapitol: 10,
     format: 'PDF (A5) + ukázková aplikace',
-    novinka: true,
+    novinka: false,
     obalka: '/img/knihy/vlastni-aplikace/obalka.jpg',
     zadni: '/img/knihy/vlastni-aplikace/zadni.jpg',
     hrbet: '#0b2545',
@@ -70,6 +70,26 @@ window.KNIHY = [
     perex: 'Evidence zakázek s přihlášením a databází: návrh, Supabase, zabezpečení dat, testování a zveřejnění.',
     ukazka: ['01','04','05','06','07','19','20','23','24','31','32','48','49','99'].map(n => `/img/knihy/vlastni-aplikace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-aplikace'
+    cena: ''       // např. '399 Kč'
+  },
+  {
+    id: 'jak-vytvorit-vlastniho-ai-chatbota',
+    nazev: 'Jak vytvořit vlastního AI chatbota',
+    podtitul: 'Od prvního nápadu po funkčního asistenta na vlastním webu',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Technologie',
+    stran: 40,
+    kapitol: 12,
+    format: 'PDF (A5) + ukázkový chatbot',
+    novinka: true,
+    obalka: '/img/knihy/vlastni-chatbot/obalka.jpg',
+    zadni: '/img/knihy/vlastni-chatbot/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/jak-vytvorit-vlastniho-ai-chatbota/',
+    perex: 'AI asistent, který odpovídá zákazníkům z vašich podkladů, přizná, když neví, a předá konverzaci člověku. Okno na web, bezpečnost a testy.',
+    ukazka: ['01','04','05','06','07','13','14','18','19','29','30','38','99'].map(n => `/img/knihy/vlastni-chatbot/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/ai-chatbot'
     cena: ''       // např. '399 Kč'
   }
 ];

@@ -418,3 +418,11 @@ section,[id]{scroll-margin-top:72px}
 @media(max-width:1100px) and (min-width:961px){.b2grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.duo-books{gap:10px}.duo-books .book3d{--w:100px;--h:141px;--d:13px}.duo-books .db{font-size:11px;max-width:110px}}
 .duo-books .db > span:last-child{min-height:2.9em;text-align:center;max-width:180px}
+/* ---------- 4 knihy v úvodu ---------- */
+.duo-books{gap:20px;flex-wrap:wrap}
+.duo-books .book3d{--w:150px;--h:212px;--d:19px}
+.duo-books .db:nth-child(4) .book3d{--ry:-10deg}
+.duo-books .db > span:last-child{max-width:160px}
+@media(max-width:560px){.duo-books{display:grid;grid-template-columns:1fr 1fr;justify-items:center;gap:18px 8px}.duo-books .book3d{--w:120px;--h:169px;--d:15px}.duo-books .db{max-width:150px}.duo-books .shelf-line{display:none}}
+.b2grid{grid-template-columns:repeat(2,1fr)}@media(max-width:960px){.b2grid{grid-template-columns:1fr}}
+@media(min-width:561px){.duo-books{flex-wrap:nowrap;gap:14px}.duo-books .book3d{--w:122px;--h:172px;--d:15px}.duo-books .db{font-size:12.5px;gap:16px}.duo-books .db > span:last-child{max-width:128px}.duo-books .shelf-line{bottom:64px}}
