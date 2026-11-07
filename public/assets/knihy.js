@@ -101,7 +101,7 @@ window.KNIHY = [
     stran: 38,
     kapitol: 12,
     format: 'PDF (A5) + 16 promptů',
-    novinka: true,
+    novinka: false,
     obalka: '/img/knihy/automatizace/obalka.jpg',
     zadni: '/img/knihy/automatizace/zadni.jpg',
     hrbet: '#0b2545',
@@ -110,6 +110,26 @@ window.KNIHY = [
     perex: 'Poptávky, e-maily, dokumenty a denní přehledy bez programování: Make, Claude a telefon. AI navrhuje, vy rozhodujete.',
     ukazka: ['01','04','05','06','09','14','15','18','19','26','29','36','99'].map(n => `/img/knihy/automatizace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/automatizace'
+    cena: ''       // např. '399 Kč'
+  },
+  {
+    id: 'jak-vytvorit-vlastni-software-pomoci-ai',
+    nazev: 'Jak vytvořit vlastní software pomocí AI',
+    podtitul: 'Od nápadu k funkčnímu systému bez předchozích znalostí programování',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Technologie',
+    stran: 36,
+    kapitol: 12,
+    format: 'PDF (A5) + ukázkové CRM',
+    novinka: true,
+    obalka: '/img/knihy/software/obalka.jpg',
+    zadni: '/img/knihy/software/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/jak-vytvorit-vlastni-software-pomoci-ai/',
+    perex: 'Vlastní CRM se zákazníky, zakázkami, přihlášením a databází. Od specifikace přes rozhraní a zabezpečení (RLS) po zveřejnění a nabídku klientům.',
+    ukazka: ['01','04','05','06','09','12','17','19','20','24','29','34','99'].map(n => `/img/knihy/software/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/software'
     cena: ''       // např. '399 Kč'
   }
 ];
