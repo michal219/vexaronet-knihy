@@ -81,7 +81,7 @@ window.KNIHY = [
     stran: 40,
     kapitol: 12,
     format: 'PDF (A5) + ukázkový chatbot',
-    novinka: true,
+    novinka: false,
     obalka: '/img/knihy/vlastni-chatbot/obalka.jpg',
     zadni: '/img/knihy/vlastni-chatbot/zadni.jpg',
     hrbet: '#0b2545',
@@ -90,6 +90,26 @@ window.KNIHY = [
     perex: 'AI asistent, který odpovídá zákazníkům z vašich podkladů, přizná, když neví, a předá konverzaci člověku. Okno na web, bezpečnost a testy.',
     ukazka: ['01','04','05','06','07','13','14','18','19','29','30','38','99'].map(n => `/img/knihy/vlastni-chatbot/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/ai-chatbot'
+    cena: ''       // např. '399 Kč'
+  },
+  {
+    id: 'jak-automatizovat-praci-pomoci-ai',
+    nazev: 'Jak automatizovat práci pomocí AI',
+    podtitul: 'Praktický průvodce automatizacemi, které šetří čas a zjednodušují každodenní práci',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Podnikání',
+    stran: 38,
+    kapitol: 12,
+    format: 'PDF (A5) + 16 promptů',
+    novinka: true,
+    obalka: '/img/knihy/automatizace/obalka.jpg',
+    zadni: '/img/knihy/automatizace/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/jak-automatizovat-praci-pomoci-ai/',
+    perex: 'Poptávky, e-maily, dokumenty a denní přehledy bez programování: Make, Claude a telefon. AI navrhuje, vy rozhodujete.',
+    ukazka: ['01','04','05','06','09','14','15','18','19','26','29','36','99'].map(n => `/img/knihy/automatizace/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/automatizace'
     cena: ''       // např. '399 Kč'
   }
 ];
