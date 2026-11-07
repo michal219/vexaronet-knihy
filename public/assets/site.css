@@ -433,3 +433,10 @@ section,[id]{scroll-margin-top:72px}
 /* ---------- 6 knih v úvodu: mřížka 3 × 2 ---------- */
 @media(min-width:561px){.duo-books{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:18px 26px;padding:24px 0 18px}.duo-books .book3d{--w:112px;--h:158px;--d:14px}.duo-books .shelf-line{display:none}}
 .duo-books .db:nth-child(6) .book3d{--ry:-12deg}
+/* 7 knih: 4 + 3 na počítači, 3 + 3 + 1 na mobilu, řádky vystředěné */
+.duo-books{display:flex!important;flex-wrap:wrap;justify-content:center;gap:18px 18px;max-width:560px;margin:0 auto;padding:24px 0 18px}
+.duo-books .db{width:126px;max-width:126px}
+.duo-books .book3d{--w:108px;--h:152px;--d:14px}
+.duo-books .shelf-line{display:none}
+.duo-books .db:nth-child(7) .book3d{--ry:-16deg}
+@media(max-width:560px){.duo-books{max-width:340px;gap:16px 8px}.duo-books .db{width:104px;max-width:104px;font-size:11px}.duo-books .book3d{--w:88px;--h:124px;--d:11px}}

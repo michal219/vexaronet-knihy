@@ -121,7 +121,7 @@ window.KNIHY = [
     stran: 36,
     kapitol: 12,
     format: 'PDF (A5) + ukázkové CRM',
-    novinka: true,
+    novinka: false,
     obalka: '/img/knihy/software/obalka.jpg',
     zadni: '/img/knihy/software/zadni.jpg',
     hrbet: '#0b2545',
@@ -130,6 +130,26 @@ window.KNIHY = [
     perex: 'Vlastní CRM se zákazníky, zakázkami, přihlášením a databází. Od specifikace přes rozhraní a zabezpečení (RLS) po zveřejnění a nabídku klientům.',
     ukazka: ['01','04','05','06','09','12','17','19','20','24','29','34','99'].map(n => `/img/knihy/software/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/software'
+    cena: ''       // např. '399 Kč'
+  },
+  {
+    id: 'jak-vytvaret-profesionalni-videa-pomoci-ai',
+    nazev: 'Jak vytvářet profesionální videa pomocí AI',
+    podtitul: 'Od prvního nápadu až po hotová videa pro sociální sítě, reklamy a YouTube',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Technologie',
+    stran: 40,
+    kapitol: 12,
+    format: 'PDF (A5) + sada promptů',
+    novinka: true,
+    obalka: '/img/knihy/video/obalka.jpg',
+    zadni: '/img/knihy/video/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/jak-vytvaret-profesionalni-videa-pomoci-ai/',
+    perex: '30sekundová reklama 9:16 krok za krokem: scénář, video prompty, AI záběry, voiceover, hudba, střih a titulky. Plus licence, označování AI obsahu a vyhodnocení výsledků.',
+    ukazka: ['01','04','05','08','10','13','15','18','21','23','25','31','99'].map(n => `/img/knihy/video/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/video'
     cena: ''       // např. '399 Kč'
   }
 ];
