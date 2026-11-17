@@ -151,5 +151,25 @@ window.KNIHY = [
     ukazka: ['01','04','05','08','10','13','15','18','21','23','25','31','99'].map(n => `/img/knihy/video/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/video'
     cena: ''       // např. '399 Kč'
+  },
+  {
+    id: 'gta-6-clipping-pro-zacatecniky',
+    nazev: 'GTA 6 Clipping pro začátečníky',
+    podtitul: 'Jak najít streamera, vytvořit první klip a začít nabízet střih za peníze',
+    autor: 'Tým Vexaronet',
+    kategorie: 'Podnikání',
+    stran: 20,
+    kapitol: 5,
+    format: 'PDF (A5) + checklist',
+    novinka: true,
+    obalka: '/img/knihy/clipping/obalka.jpg',
+    zadni: '/img/knihy/clipping/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#2ec4b6',
+    detail: '/kniha/gta-6-clipping-pro-zacatecniky/',
+    perex: 'Co je clipping a kdo za něj platí, jak oslovit streamera, jak používat nástroj GTA Clipper a jak udělat první vertikální klip. Včetně sedmidenního plánu a checklistu.',
+    ukazka: ['01','03','04','05','08','10','12','14','15','17','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
+    gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/gta-6-clipping'
+    cena: ''       // např. '249 Kč'
   }
 ];
