@@ -167,7 +167,7 @@ window.KNIHY = [
     hrbet: '#0b2545',
     akcent: '#2ec4b6',
     detail: '/kniha/gta-6-clipping-pro-zacatecniky/',
-    perex: 'Co je clipping a kdo za něj platí, jak oslovit streamera, jak používat nástroj GTA Clipper a jak udělat první vertikální klip. Včetně sedmidenního plánu a checklistu.',
+    perex: 'GTA 6 rozhýbe celý internet a streameři budou potřebovat lidi, kteří z hodin záznamu vystřihnou ty nejlepší momenty. Zjistíš, kdo za klipy platí, jak oslovit streamera, jak z jednoho okamžiku udělat vertikální video pro TikTok, Reels a Shorts a jak z toho začít vydělávat. Výdělek není zaručený, ale cestu k prvním zakázkám dostaneš krok za krokem.',
     ukazka: ['01','03','04','05','08','10','12','14','15','17','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/gta-6-clipping'
     cena: ''       // např. '249 Kč'
