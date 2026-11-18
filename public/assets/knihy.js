@@ -155,20 +155,20 @@ window.KNIHY = [
   {
     id: 'gta-6-clipping-pro-zacatecniky',
     nazev: 'GTA 6 Clipping pro začátečníky',
-    podtitul: 'Jak najít streamera, vytvořit první klip a začít nabízet střih za peníze',
+    podtitul: 'Jak začít vydělávat na klipech, kde najít placené kampaně a jak nechat Clauda hlídat stream',
     autor: 'Tým Vexaronet',
     kategorie: 'Podnikání',
     stran: 20,
-    kapitol: 5,
-    format: 'PDF (A5) + checklist',
+    kapitol: 6,
+    format: 'PDF (A5) + prompt zdarma',
     novinka: true,
     obalka: '/img/knihy/clipping/obalka.jpg',
     zadni: '/img/knihy/clipping/zadni.jpg',
     hrbet: '#0b2545',
     akcent: '#2ec4b6',
     detail: '/kniha/gta-6-clipping-pro-zacatecniky/',
-    perex: 'GTA 6 rozhýbe celý internet a streameři budou potřebovat lidi, kteří z hodin záznamu vystřihnou ty nejlepší momenty. Zjistíš, kdo za klipy platí, jak oslovit streamera, jak z jednoho okamžiku udělat vertikální video pro TikTok, Reels a Shorts a jak z toho začít vydělávat. Výdělek není zaručený, ale cestu k prvním zakázkám dostaneš krok za krokem.',
-    ukazka: ['01','03','04','05','08','10','12','14','15','17','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
+    perex: 'GTA 6 vychází 19. listopadu a placené kampaně na klipy přibývají každý den. Zjistíš, kdo za klipy platí, kde najdeš GTA 6 kampaně i kampaně ze streamů a podcastů a jak udělat první klip. Bonus zdarma: prompt, se kterým Claude hlídá stream a sám dělá shorty. Výdělek není zaručený, ale cestu k němu dostaneš krok za krokem.',
+    ukazka: ['01','03','04','05','06','07','08','10','11','13','16','19','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/gta-6-clipping'
     cena: ''       // např. '249 Kč'
   }
