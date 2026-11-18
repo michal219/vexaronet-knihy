@@ -49,10 +49,12 @@
 
   /* ---------- nákupní tlačítka ---------- */
   let needGumroad = false;
+  const STRIPE = (window.NAKLADATELSTVI || {}).platby === 'stripe';
   function wireBuy(root) {
     root.querySelectorAll('[data-buy]').forEach(a => {
       const k = byId(a.dataset.buy); if (!k) return;
-      if (k.gumroad) { a.href = k.gumroad; needGumroad = true; }
+      if (STRIPE && k.cena) { a.href = '/api/koupit?kniha=' + encodeURIComponent(k.id); }
+      else if (k.gumroad) { a.href = k.gumroad; needGumroad = true; }
       else { a.removeAttribute('href'); a.classList.add('soon'); a.textContent = 'Brzy v prodeji'; }
     });
     root.querySelectorAll('[data-price]').forEach(e => { const k = byId(e.dataset.price); if (k && k.cena) e.textContent = (e.dataset.prefix || '') + k.cena; else e.remove(); });
@@ -222,7 +224,8 @@
     pages = kniha.ukazka; pages.forEach(s => { const i = new Image(); i.src = s; });
     fb.querySelector('.fb-t').textContent = kniha.nazev;
     const buy = fb.querySelector('.fb-buy');
-    if (kniha.gumroad) { buy.href = kniha.gumroad; buy.textContent = 'Koupit celý e-book'; buy.classList.remove('soon'); }
+    if ((window.NAKLADATELSTVI || {}).platby === 'stripe' && kniha.cena) { buy.href = '/api/koupit?kniha=' + encodeURIComponent(kniha.id); buy.textContent = 'Koupit celý e-book'; buy.classList.remove('soon'); }
+    else if (kniha.gumroad) { buy.href = kniha.gumroad; buy.textContent = 'Koupit celý e-book'; buy.classList.remove('soon'); }
     else { buy.href = kniha.detail + '#koupit'; buy.textContent = 'Celý e-book'; buy.onclick = close; }
     layout(); spread = 0; fb.classList.add('on'); requestAnimationFrame(() => { fb.classList.add('vis'); draw(); });
     document.body.style.overflow = 'hidden'; nextB.focus();

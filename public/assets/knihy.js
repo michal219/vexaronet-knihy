@@ -1,13 +1,15 @@
 /* =====================================================================
    KATALOG NAKLADATELSTVÍ
    Novou knihu přidáte tak, že zkopírujete jeden blok { … } níže.
-   gumroad = odkaz na produkt v Gumroadu, cena = text ceny (např. '399 Kč').
-   Dokud je gumroad prázdný, tlačítko ukazuje „Brzy v prodeji“.
+   cena = text ceny (např. '399 Kč'). Platí se přes Stripe, když je níže platby: 'stripe'.
+   Skutečnou částku, kterou Stripe strhne, určuje functions/_katalog.js – obě místa musí sedět.
+   Dokud je platby prázdné (nebo chybí cena), tlačítko ukazuje „Brzy v prodeji“.
    ===================================================================== */
 window.NAKLADATELSTVI = {
   nazev: 'Nakladatelství Vexaronet',
   email: 'info@vexaronet.com',
-  web: 'https://vexaronet.com'
+  web: 'https://vexaronet.com',
+  platby: ''   // zítra po nastavení Stripe přepnout na 'stripe'
 };
 
 window.KNIHY = [
@@ -30,7 +32,7 @@ window.KNIHY = [
     // ukázka k listování: strany v pořadí (první = obálka)
     ukazka: ['01','04','05','06','07','13','14','26','27','47','48','73','74','99'].map(n => `/img/knihy/vlastni-web/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-web'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'vlastni-e-shop-pomoci-ai',
@@ -50,7 +52,7 @@ window.KNIHY = [
     perex: 'Katalog, košík, platby kartou přes Stripe, doprava, právní minimum a spuštění. Vlastní obchod bez měsíčního paušálu za platformu.',
     ukazka: ['01','04','05','06','07','23','25','30','31','39','40','55','56','99'].map(n => `/img/knihy/vlastni-eshop/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-eshop'
-    cena: ''       // např. '449 Kč'
+    cena: '449 Kč'
   },
   {
     id: 'vlastni-aplikace-pomoci-ai',
@@ -70,7 +72,7 @@ window.KNIHY = [
     perex: 'Evidence zakázek s přihlášením a databází: návrh, Supabase, zabezpečení dat, testování a zveřejnění.',
     ukazka: ['01','04','05','06','07','19','20','23','24','31','32','48','49','99'].map(n => `/img/knihy/vlastni-aplikace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/vlastni-aplikace'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-vytvorit-vlastniho-ai-chatbota',
@@ -90,7 +92,7 @@ window.KNIHY = [
     perex: 'AI asistent, který odpovídá zákazníkům z vašich podkladů, přizná, když neví, a předá konverzaci člověku. Okno na web, bezpečnost a testy.',
     ukazka: ['01','04','05','06','07','13','14','18','19','29','30','38','99'].map(n => `/img/knihy/vlastni-chatbot/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/ai-chatbot'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-automatizovat-praci-pomoci-ai',
@@ -110,7 +112,7 @@ window.KNIHY = [
     perex: 'Poptávky, e-maily, dokumenty a denní přehledy bez programování: Make, Claude a telefon. AI navrhuje, vy rozhodujete.',
     ukazka: ['01','04','05','06','09','14','15','18','19','26','29','36','99'].map(n => `/img/knihy/automatizace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/automatizace'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-vytvorit-vlastni-software-pomoci-ai',
@@ -130,7 +132,7 @@ window.KNIHY = [
     perex: 'Vlastní CRM se zákazníky, zakázkami, přihlášením a databází. Od specifikace přes rozhraní a zabezpečení (RLS) po zveřejnění a nabídku klientům.',
     ukazka: ['01','04','05','06','09','12','17','19','20','24','29','34','99'].map(n => `/img/knihy/software/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/software'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-vytvaret-profesionalni-videa-pomoci-ai',
@@ -150,7 +152,7 @@ window.KNIHY = [
     perex: '30sekundová reklama 9:16 krok za krokem: scénář, video prompty, AI záběry, voiceover, hudba, střih a titulky. Plus licence, označování AI obsahu a vyhodnocení výsledků.',
     ukazka: ['01','04','05','08','10','13','15','18','21','23','25','31','99'].map(n => `/img/knihy/video/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/video'
-    cena: ''       // např. '399 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'gta-6-clipping-pro-zacatecniky',
@@ -170,6 +172,6 @@ window.KNIHY = [
     perex: 'GTA 6 vychází 19. listopadu a placené kampaně na klipy přibývají každý den. Zjistíš, kdo za klipy platí, kde najdeš GTA 6 kampaně i kampaně ze streamů a podcastů a jak udělat první klip. Bonus zdarma: prompt, se kterým Claude hlídá stream a sám dělá shorty. Výdělek není zaručený, ale cestu k němu dostaneš krok za krokem.',
     ukazka: ['01','03','04','05','06','07','08','10','11','13','16','19','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://vexaronet.gumroad.com/l/gta-6-clipping'
-    cena: ''       // např. '249 Kč'
+    cena: '249 Kč'
   }
 ];
