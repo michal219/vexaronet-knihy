@@ -1,4 +1,4 @@
-# Nakladatelství Vexaronet – web
+# Nakladatelství Grindbooks – web
 
 Statický web nakladatelství (katalog e-booků, detaily knih, ukázky zdarma).
 
@@ -9,7 +9,7 @@ Statický web nakladatelství (katalog e-booků, detaily knih, ukázky zdarma).
 
 ## Spuštění prodeje přes Stripe
 1. Cloudflare Pages → projekt → Settings → Variables and Secrets: přidat secret `STRIPE_SECRET_KEY` (sk_live_… nebo pro zkoušku sk_test_…).
-2. Cloudflare → R2 → vytvořit bucket (např. `vexaronet-knihy`) a nahrát soubory přesně podle cest v `functions/_katalog.js`.
+2. Cloudflare → R2 → vytvořit bucket (např. `grindbooks-knihy`) a nahrát soubory přesně podle cest v `functions/_katalog.js`.
 3. Pages → Settings → Bindings → R2 bucket: název proměnné `KNIHY`, bucket z kroku 2.
 4. Stripe → Settings → Public details: vyplnit adresu podmínek (…/podminky/), aby Stripe zobrazil zaškrtávací souhlas.
 5. V `public/assets/knihy.js` nastavit `platby: 'stripe'`, doplnit údaje prodávajícího v `public/podminky/` a nasadit.

@@ -6,7 +6,7 @@ export async function onRequestGet({ request, env }) {
   const id = url.searchParams.get('kniha');
   const k = KATALOG[id];
   if (!k) return stranka('Kniha nenalezena', 'Tahle kniha v katalogu není.', 404);
-  if (!env.STRIPE_SECRET_KEY) return stranka('Prodej se připravuje', 'Platby zatím nejsou zapnuté. Zkus to prosím za chvíli nebo nám napiš na info@vexaronet.com.', 503);
+  if (!env.STRIPE_SECRET_KEY) return stranka('Prodej se připravuje', 'Platby zatím nejsou zapnuté. Zkus to prosím za chvíli nebo nám napiš na info@grindbooks.eu.', 503);
   const data = {
     mode: 'payment',
     locale: 'cs',
@@ -28,6 +28,6 @@ export async function onRequestGet({ request, env }) {
     catch (e) { s = await stripe(env, 'checkout/sessions', data); }
     return Response.redirect(s.url, 303);
   } catch (e) {
-    return stranka('Platbu se nepodařilo spustit', 'Omlouváme se, zkus to prosím znovu. Pokud to nepůjde, napiš nám na info@vexaronet.com.', 502);
+    return stranka('Platbu se nepodařilo spustit', 'Omlouváme se, zkus to prosím znovu. Pokud to nepůjde, napiš nám na info@grindbooks.eu.', 502);
   }
 }
