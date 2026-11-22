@@ -1,0 +1,14 @@
+{
+  // Řeší: Cloudflare zobrazovalo "Worker that only has static assets" a nešly přidat
+  // proměnné/bindings. Bez tohoto souboru Cloudflare vůbec nespouští kód ve `functions/`
+  // (ten je jen konvence pro staré Pages Functions) a servíruje jen `public/` jako statiku.
+  "name": "vexaronet-knihy",
+  "compatibility_date": "2026-11-22",
+  "main": "./worker.js",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // na /api/* se vždy spustí worker.js (ne jen když tam není statický soubor)
+    "run_worker_first": ["/api/*"]
+  }
+}
