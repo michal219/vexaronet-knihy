@@ -8,9 +8,9 @@ export async function onRequestGet({ request, env }) {
   if (!/^cs_(test|live)_[A-Za-z0-9]+$/.test(sid)) return stranka('Neplatný odkaz', 'Odkaz ke stažení není platný.', 400);
   let s;
   try { s = await stripe(env, 'checkout/sessions/' + sid); }
-  catch (e) { return stranka('Nákup nenalezen', 'Tenhle nákup jsme nenašli. Napiš nám na info@vexaronet.com.', 404); }
+  catch (e) { return stranka('Nákup nenalezen', 'Tenhle nákup jsme nenašli. Napiš nám na info@grindbooks.eu.', 404); }
   const k = KATALOG[s.metadata && s.metadata.kniha];
-  if (!k) return stranka('Nákup nenalezen', 'K tomuto nákupu nemáme knihu. Napiš nám na info@vexaronet.com.', 404);
+  if (!k) return stranka('Nákup nenalezen', 'K tomuto nákupu nemáme knihu. Napiš nám na info@grindbooks.eu.', 404);
   if (s.payment_status !== 'paid') return stranka('Platba ještě není dokončená', 'Jakmile platba projde, obnov tuhle stránku.', 402);
 
   const jmena = k.soubory.map(f => f.split('/').pop());
@@ -21,7 +21,7 @@ export async function onRequestGet({ request, env }) {
   const klic = k.soubory[i];
   if (!klic) return stranka('Soubor nenalezen', 'Tenhle soubor v balíčku není.', 404);
   const obj = env.KNIHY && await env.KNIHY.get(klic);
-  if (!obj) return stranka('Soubor se připravuje', 'Soubor teď není dostupný. Napiš nám na info@vexaronet.com a pošleme ti ho.', 503);
+  if (!obj) return stranka('Soubor se připravuje', 'Soubor teď není dostupný. Napiš nám na info@grindbooks.eu a pošleme ti ho.', 503);
   const typ = klic.endsWith('.pdf') ? 'application/pdf' : klic.endsWith('.zip') ? 'application/zip' : 'text/plain; charset=utf-8';
   return new Response(obj.body, { headers: {
     'Content-Type': typ,

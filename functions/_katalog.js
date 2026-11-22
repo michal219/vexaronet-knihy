@@ -24,5 +24,5 @@ export async function stripe(env, cesta, data) {
 export const stranka = (nadpis, text, status = 400) => new Response(
   `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${nadpis}</title>
 <style>body{font:16px/1.6 system-ui,sans-serif;background:#071528;color:#e6eefa;display:grid;place-items:center;min-height:100vh;margin:0;padding:20px}div{max-width:520px}a{color:#2ec4b6}</style></head>
-<body><div><h1>${nadpis}</h1><p>${text}</p><p><a href="/">Zpět na nakladatelství</a></p></div></body></html>`,
+<body><div><h1>${nadpis}</h1><p>${text}</p><p><a href="/">Zpět na Grindbooks</a></p></div></body></html>`,
   { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Děkujeme za nákup | Nakladatelství Vexaronet</title>
+<title>Děkujeme za nákup | Grindbooks</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Vexaronet</b><small>Nakladatelství</small></span></a>
+  <a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Grindbooks</b><small>E-booky</small></span></a>
   <ul><li><a href="/#katalog">Katalog</a></li><li><a href="/podminky/">Podmínky nákupu</a></li></ul>
   <a class="btn sm" href="/#katalog">Katalog e-booků</a>
 </div></header>
@@ -20,13 +20,13 @@
 <h1 class="serif" style="font-size:clamp(34px,5vw,54px)">Děkujeme za nákup</h1>
 <p id="stav">Ověřujeme platbu…</p>
 <div id="soubory" style="display:flex;flex-direction:column;gap:12px;align-items:center;margin:22px 0"></div>
-<p id="pozn" style="font-size:14px;opacity:.75;display:none">Ulož si adresu této stránky (záložka nebo e-mail sobě). Funguje i později a soubory si z ní můžeš stáhnout znovu. Potvrzení o platbě ti pošle Stripe e-mailem. Když něco nejde, napiš na <a href="mailto:info@vexaronet.com">info@vexaronet.com</a>.</p>
-<a class="btn ghost" href="/">Zpět do nakladatelství</a></div></main>
+<p id="pozn" style="font-size:14px;opacity:.75;display:none">Ulož si adresu této stránky (záložka nebo e-mail sobě). Funguje i později a soubory si z ní můžeš stáhnout znovu. Potvrzení o platbě ti pošle Stripe e-mailem. Když něco nejde, napiš na <a href="mailto:info@grindbooks.eu">info@grindbooks.eu</a>.</p>
+<a class="btn ghost" href="/">Zpět na Grindbooks</a></div></main>
 <script>
 (async () => {
   const sid = new URLSearchParams(location.search).get('session_id');
   const stav = document.getElementById('stav'), box = document.getElementById('soubory');
-  if (!sid) { stav.textContent = 'V odkazu chybí údaje o nákupu. Napiš nám prosím na info@vexaronet.com.'; return; }
+  if (!sid) { stav.textContent = 'V odkazu chybí údaje o nákupu. Napiš nám prosím na info@grindbooks.eu.'; return; }
   for (let pokus = 0; pokus < 5; pokus++) {
     const r = await fetch('/api/stazeni?info=1&session_id=' + encodeURIComponent(sid)).catch(() => null);
     if (r && r.ok) {
@@ -39,17 +39,17 @@
     if (r && r.status !== 402) break;
     stav.textContent = 'Čekáme na potvrzení platby…'; await new Promise(z => setTimeout(z, 3000));
   }
-  stav.textContent = 'Nákup se nepodařilo ověřit. Napiš nám prosím na info@vexaronet.com a pošleme ti soubory.';
+  stav.textContent = 'Nákup se nepodařilo ověřit. Napiš nám prosím na info@grindbooks.eu a pošleme ti soubory.';
 })();
 </script>
 <footer><div class="wrap">
   <div class="cols">
-    <div><a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Vexaronet</b><small>Nakladatelství</small></span></a>
+    <div><a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Grindbooks</b><small>E-booky</small></span></a>
       <p style="margin-top:14px;max-width:340px">Praktické české e-booky, podle kterých věci opravdu uděláte.</p></div>
     <div><h4>E-booky</h4><ul><li><a href="/kniha/vlastni-web-pomoci-ai/">Vlastní web pomocí AI</a></li><li><a href="/#katalog">Celý katalog</a></li></ul></div>
-    <div><h4>Kontakt</h4><ul><li><a href="mailto:info@vexaronet.com">info@vexaronet.com</a></li><li><a href="https://vexaronet.com">vexaronet.com</a></li><li><a href="/podminky/">Podmínky nákupu</a></li><li><a href="/soukromi/">Ochrana soukromí</a></li></ul></div>
+    <div><h4>Kontakt</h4><ul><li><a href="mailto:info@grindbooks.eu">info@grindbooks.eu</a></li><li><a href="https://grindbooks.eu">grindbooks.eu</a></li><li><a href="/podminky/">Podmínky nákupu</a></li><li><a href="/soukromi/">Ochrana soukromí</a></li></ul></div>
   </div>
-  <div class="legal">© 2026 Tým Vexaronet. Platby zpracovává Stripe. Claude a Claude Code jsou ochranné známky společnosti Anthropic; naše e-booky nejsou oficiálními produkty společnosti Anthropic.</div>
+  <div class="legal">© 2026 Grindbooks. Platby zpracovává Stripe. Claude a Claude Code jsou ochranné známky společnosti Anthropic; naše e-booky nejsou oficiálními produkty společnosti Anthropic.</div>
 </div></footer>
 <script src="/assets/knihy.js"></script>
 <script src="/assets/site.js"></script>
