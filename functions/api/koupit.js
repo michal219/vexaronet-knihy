@@ -25,9 +25,10 @@ export async function onRequestGet({ request, env }) {
     let s;
     // zaškrtávací souhlas s podmínkami; Stripe ho povolí, až je v nastavení účtu vyplněná adresa podmínek
     try { s = await stripe(env, 'checkout/sessions', { ...data, 'consent_collection[terms_of_service]': 'required' }); }
-    catch (e) { s = await stripe(env, 'checkout/sessions', data); }
+    catch (e1) { console.log('Stripe: 1. pokus (se souhlasem s podmínkami) selhal:', e1.message); s = await stripe(env, 'checkout/sessions', data); }
     return Response.redirect(s.url, 303);
   } catch (e) {
+    console.error('Stripe checkout/sessions selhalo:', e.message);
     return stranka('Platbu se nepodařilo spustit', 'Omlouváme se, zkus to prosím znovu. Pokud to nepůjde, napiš nám na info@grindbooks.eu.', 502);
   }
 }
