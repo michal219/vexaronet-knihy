@@ -9,7 +9,7 @@ export const KATALOG = {
   'jak-automatizovat-praci-pomoci-ai':         { nazev: 'Jak automatizovat práci pomocí AI', cena: 39900, soubory: ['jak-automatizovat-praci-pomoci-ai/Automatizace-pomoci-AI.pdf'] },
   'jak-vytvorit-vlastni-software-pomoci-ai':   { nazev: 'Jak vytvořit vlastní software pomocí AI', cena: 39900, soubory: ['jak-vytvorit-vlastni-software-pomoci-ai/Vlastni-software-pomoci-AI.pdf'] },
   'jak-vytvaret-profesionalni-videa-pomoci-ai':{ nazev: 'Jak vytvářet profesionální videa pomocí AI', cena: 39900, soubory: ['jak-vytvaret-profesionalni-videa-pomoci-ai/Videa-pomoci-AI.pdf'] },
-  'gta-6-clipping-pro-zacatecniky':            { nazev: 'GTA 6 Clipping pro začátečníky', cena: 24900, soubory: ['gta-6-clipping-pro-zacatecniky/GTA-6-Clipping-pro-zacatecniky.pdf', 'gta-6-clipping-pro-zacatecniky/prompt-claude-hlida-stream.txt'] },
+  'gta-6-clipping-pro-zacatecniky':            { nazev: 'Clipping pro začátečníky (bonus: GTA 6)', cena: 24900, soubory: ['gta-6-clipping-pro-zacatecniky/GTA-6-Clipping-pro-zacatecniky.pdf', 'gta-6-clipping-pro-zacatecniky/prompt-claude-hlida-stream.txt'] },
 };
 
 export async function stripe(env, cesta, data) {

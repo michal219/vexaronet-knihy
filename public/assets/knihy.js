@@ -156,7 +156,7 @@ window.KNIHY = [
   },
   {
     id: 'gta-6-clipping-pro-zacatecniky',
-    nazev: 'GTA 6 Clipping pro začátečníky',
+    nazev: 'Clipping pro začátečníky (bonus: GTA 6)',
     podtitul: 'Jak začít vydělávat na klipech, kde najít placené kampaně a jak nechat Clauda hlídat stream',
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
