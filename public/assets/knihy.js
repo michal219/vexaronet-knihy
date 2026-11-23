@@ -313,5 +313,25 @@ window.KNIHY = [
     ukazka: ['01','04','06','07','09','14','16','22','24','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
     gumroad: '',
     cena: '199 Kč'
+  },
+  {
+    id: 'cold-calling-pro-zacatecniky',
+    nazev: 'Cold calling pro začátečníky',
+    podtitul: 'Pro začátečníky: jak začít s telefonními hovory, co se naučit, skripty, námitky a pravidla v ČR',
+    autor: 'Tým Grindbooks',
+    kategorie: 'Podnikání',
+    stran: 28,
+    kapitol: 10,
+    format: 'PDF + šablony',
+    novinka: true,
+    obalka: '/img/knihy/cold-calling/obalka.jpg',
+    zadni: '/img/knihy/cold-calling/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#ff7a59',
+    detail: '/kniha/cold-calling-pro-zacatecniky/',
+    perex: 'Pravidla v ČR, skripty hovoru, odpovědi na námitky, tabulka kontaktů, trénink s AI a plán na 14 dní.',
+    ukazka: ['01','04','06','07','10','16','18','25','27','99'].map(n => `/img/knihy/cold-calling/ukazka/${n}.jpg`),
+    gumroad: '',
+    cena: '249 Kč'
   }
 ];
