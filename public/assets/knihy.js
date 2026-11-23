@@ -180,8 +180,8 @@ window.KNIHY = [
     podtitul: "Od nápadu k prvnímu zákazníkovi, s rodiči po boku",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 37,
-    kapitol: 12,
+    stran: 43,
+    kapitol: 13,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/podnikani-15/obalka.jpg',
@@ -190,9 +190,9 @@ window.KNIHY = [
     akcent: '#2ec4b6',
     detail: '/kniha/jak-zacit-podnikat-od-15-let/',
     perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 14 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
-    ukazka: ['01','04','06','07','13','20','24','34','36','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
+    ukazka: ['01','04','07','08','15','23','28','40','42','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '899 Kč'
+    cena: '349 Kč'
   },
   {
     id: 'jak-zacit-s-doucovanim-od-15-let',
@@ -200,8 +200,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: první žáci, ceník, bezpečnost a první lekce",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 24,
-    kapitol: 10,
+    stran: 25,
+    kapitol: 11,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/doucovani/obalka.jpg',
@@ -210,9 +210,9 @@ window.KNIHY = [
     akcent: '#2ec4b6',
     detail: '/kniha/jak-zacit-s-doucovanim-od-15-let/',
     perex: "První žáci, ceník, struktura lekce, bezpečnost a údaje dětí. Šablony zpráv a plán na 30 dní.",
-    ukazka: ['01','04','06','07','09','14','16','21','23','99'].map(n => `/img/knihy/doucovani/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','09','14','16','22','24','99'].map(n => `/img/knihy/doucovani/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   },
   {
     id: 'jak-zacit-se-spravou-socialnich-siti-od-15-let',
@@ -220,8 +220,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: nabídka, plán příspěvků a komunikace s klientem",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 19,
-    kapitol: 10,
+    stran: 22,
+    kapitol: 11,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/socialni-site/obalka.jpg',
@@ -230,9 +230,9 @@ window.KNIHY = [
     akcent: '#f2b84b',
     detail: '/kniha/jak-zacit-se-spravou-socialnich-siti-od-15-let/',
     perex: "Nabídka a balíčky, měsíční plán příspěvků s AI, komunikace s klientem a licence.",
-    ukazka: ['01','04','05','06','07','11','12','16','18','99'].map(n => `/img/knihy/socialni-site/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','08','13','14','19','21','99'].map(n => `/img/knihy/socialni-site/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   },
   {
     id: 'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let',
@@ -240,8 +240,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: výrobek, kalkulace, fotky, prodej a práva zákazníků",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 18,
-    kapitol: 9,
+    stran: 20,
+    kapitol: 10,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/rucni-vyroba/obalka.jpg',
@@ -250,9 +250,9 @@ window.KNIHY = [
     akcent: '#ff8a6b',
     detail: '/kniha/jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let/',
     perex: "Bezpečné výrobky, kalkulace, fotky, prodejní kanály a práva zákazníků.",
-    ukazka: ['01','04','06','07','11','12','15','17','99'].map(n => `/img/knihy/rucni-vyroba/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','12','13','17','19','99'].map(n => `/img/knihy/rucni-vyroba/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   },
   {
     id: 'jak-zacit-se-sluzbami-pro-domacnost-od-15-let',
@@ -260,8 +260,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: bezpečné služby, nabídka, odpovědnost a první zákazníci",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 18,
-    kapitol: 9,
+    stran: 19,
+    kapitol: 10,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/sluzby-domacnost/obalka.jpg',
@@ -270,9 +270,9 @@ window.KNIHY = [
     akcent: '#7bd88f',
     detail: '/kniha/jak-zacit-se-sluzbami-pro-domacnost-od-15-let/',
     perex: "Bezpečné služby, nabídka, odpovědnost a první zákazníci ve vašem okolí.",
-    ukazka: ['01','04','06','07','11','12','15','17','99'].map(n => `/img/knihy/sluzby-domacnost/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','11','12','16','18','99'].map(n => `/img/knihy/sluzby-domacnost/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   },
   {
     id: 'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let',
@@ -280,8 +280,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: služby, licence, zadání od klienta a portfolio",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 17,
-    kapitol: 9,
+    stran: 19,
+    kapitol: 10,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/kreativa-ai/obalka.jpg',
@@ -290,9 +290,9 @@ window.KNIHY = [
     akcent: '#9b8cff',
     detail: '/kniha/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/',
     perex: "Licence, zadání od klienta, revize, cena a portfolio. S pomocí AI.",
-    ukazka: ['01','04','05','06','10','11','14','16','99'].map(n => `/img/knihy/kreativa-ai/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','11','12','16','18','99'].map(n => `/img/knihy/kreativa-ai/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   },
   {
     id: 'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let',
@@ -300,8 +300,8 @@ window.KNIHY = [
     podtitul: "Příručka pro mladé podnikatele: téma, tvorba, cena, prodej a pasti na internetu",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 20,
-    kapitol: 9,
+    stran: 23,
+    kapitol: 10,
     format: 'PDF + šablony',
     novinka: true,
     obalka: '/img/knihy/digitalni-produkty/obalka.jpg',
@@ -310,8 +310,8 @@ window.KNIHY = [
     akcent: '#5ec2ff',
     detail: '/kniha/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/',
     perex: "Téma a poptávka, tvorba e-booku nebo šablony s AI, cena, prodej s ohledem na věk a pasti na internetu.",
-    ukazka: ['01','04','06','07','12','13','17','19','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','08','13','15','20','22','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '399 Kč'
+    cena: '199 Kč'
   }
 ];
