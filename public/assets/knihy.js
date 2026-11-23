@@ -192,7 +192,7 @@ window.KNIHY = [
     perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 14 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
     ukazka: ['01','04','06','07','13','20','24','34','36','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '349 Kč'
+    cena: '899 Kč'
   },
   {
     id: 'jak-zacit-s-doucovanim-od-15-let',
@@ -212,7 +212,7 @@ window.KNIHY = [
     perex: "První žáci, ceník, struktura lekce, bezpečnost a údaje dětí. Šablony zpráv a plán na 30 dní.",
     ukazka: ['01','04','06','07','09','14','16','21','23','99'].map(n => `/img/knihy/doucovani/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-zacit-se-spravou-socialnich-siti-od-15-let',
@@ -232,7 +232,7 @@ window.KNIHY = [
     perex: "Nabídka a balíčky, měsíční plán příspěvků s AI, komunikace s klientem a licence.",
     ukazka: ['01','04','05','06','07','11','12','16','18','99'].map(n => `/img/knihy/socialni-site/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let',
@@ -252,7 +252,7 @@ window.KNIHY = [
     perex: "Bezpečné výrobky, kalkulace, fotky, prodejní kanály a práva zákazníků.",
     ukazka: ['01','04','06','07','11','12','15','17','99'].map(n => `/img/knihy/rucni-vyroba/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-zacit-se-sluzbami-pro-domacnost-od-15-let',
@@ -272,7 +272,7 @@ window.KNIHY = [
     perex: "Bezpečné služby, nabídka, odpovědnost a první zákazníci ve vašem okolí.",
     ukazka: ['01','04','06','07','11','12','15','17','99'].map(n => `/img/knihy/sluzby-domacnost/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let',
@@ -292,7 +292,7 @@ window.KNIHY = [
     perex: "Licence, zadání od klienta, revize, cena a portfolio. S pomocí AI.",
     ukazka: ['01','04','05','06','10','11','14','16','99'].map(n => `/img/knihy/kreativa-ai/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   },
   {
     id: 'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let',
@@ -312,6 +312,6 @@ window.KNIHY = [
     perex: "Téma a poptávka, tvorba e-booku nebo šablony s AI, cena, prodej s ohledem na věk a pasti na internetu.",
     ukazka: ['01','04','06','07','12','13','17','19','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '399 Kč'
   }
 ];
