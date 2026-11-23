@@ -16,6 +16,7 @@ export const KATALOG = {
   'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let': { nazev: "Jak začít s ruční výrobou a prodejem", cena: 19900, soubory: ['jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let/jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let.pdf'] },
   'jak-zacit-se-sluzbami-pro-domacnost-od-15-let': { nazev: "Jak začít se službami pro domácnost a sousedy", cena: 19900, soubory: ['jak-zacit-se-sluzbami-pro-domacnost-od-15-let/jak-zacit-se-sluzbami-pro-domacnost-od-15-let.pdf'] },
   'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let': { nazev: "Jak začít s grafikou, videem a weby s AI", cena: 19900, soubory: ['jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let.pdf'] },
+  'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let': { nazev: "Jak začít s e-booky a digitálními produkty", cena: 19900, soubory: ['jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let.pdf'] },
 };
 
 export async function stripe(env, cesta, data) {
