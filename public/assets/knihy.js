@@ -180,7 +180,7 @@ window.KNIHY = [
     podtitul: "Od nápadu k prvnímu zákazníkovi, s rodiči po boku",
     autor: 'Tým Grindbooks',
     kategorie: 'Podnikání',
-    stran: 36,
+    stran: 37,
     kapitol: 12,
     format: 'PDF + šablony',
     novinka: true,
@@ -190,7 +190,7 @@ window.KNIHY = [
     akcent: '#2ec4b6',
     detail: '/kniha/jak-zacit-podnikat-od-15-let/',
     perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 12 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
-    ukazka: ['01','04','06','07','13','20','24','33','35','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
+    ukazka: ['01','04','06','07','13','20','24','34','36','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
     gumroad: '',
     cena: '349 Kč'
   },
