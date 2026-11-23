@@ -189,7 +189,7 @@ window.KNIHY = [
     hrbet: '#0b2545',
     akcent: '#2ec4b6',
     detail: '/kniha/jak-zacit-podnikat-od-15-let/',
-    perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 12 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
+    perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 14 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
     ukazka: ['01','04','06','07','13','20','24','34','36','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
     gumroad: '',
     cena: '349 Kč'
@@ -291,6 +291,26 @@ window.KNIHY = [
     detail: '/kniha/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/',
     perex: "Licence, zadání od klienta, revize, cena a portfolio. S pomocí AI.",
     ukazka: ['01','04','05','06','10','11','14','16','99'].map(n => `/img/knihy/kreativa-ai/ukazka/${n}.jpg`),
+    gumroad: '',
+    cena: '199 Kč'
+  },
+  {
+    id: 'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let',
+    nazev: "Jak začít s e-booky a digitálními produkty",
+    podtitul: "Příručka pro mladé podnikatele: téma, tvorba, cena, prodej a pasti na internetu",
+    autor: 'Tým Grindbooks',
+    kategorie: 'Podnikání',
+    stran: 20,
+    kapitol: 9,
+    format: 'PDF + šablony',
+    novinka: true,
+    obalka: '/img/knihy/digitalni-produkty/obalka.jpg',
+    zadni: '/img/knihy/digitalni-produkty/zadni.jpg',
+    hrbet: '#0b2545',
+    akcent: '#5ec2ff',
+    detail: '/kniha/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/',
+    perex: "Téma a poptávka, tvorba e-booku nebo šablony s AI, cena, prodej s ohledem na věk a pasti na internetu.",
+    ukazka: ['01','04','06','07','12','13','17','19','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
     gumroad: '',
     cena: '199 Kč'
   }
