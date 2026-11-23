@@ -10,13 +10,13 @@ export const KATALOG = {
   'jak-vytvorit-vlastni-software-pomoci-ai':   { nazev: 'Jak vytvořit vlastní software pomocí AI', cena: 39900, soubory: ['jak-vytvorit-vlastni-software-pomoci-ai/Vlastni-software-pomoci-AI.pdf'] },
   'jak-vytvaret-profesionalni-videa-pomoci-ai':{ nazev: 'Jak vytvářet profesionální videa pomocí AI', cena: 39900, soubory: ['jak-vytvaret-profesionalni-videa-pomoci-ai/Videa-pomoci-AI.pdf'] },
   'gta-6-clipping-pro-zacatecniky':            { nazev: 'Clipping pro začátečníky (bonus: GTA 6)', cena: 24900, soubory: ['gta-6-clipping-pro-zacatecniky/GTA-6-Clipping-pro-zacatecniky.pdf', 'gta-6-clipping-pro-zacatecniky/prompt-claude-hlida-stream.txt'] },
-  'jak-zacit-podnikat-od-15-let': { nazev: "Jak začít podnikat od 15 let", cena: 34900, soubory: ['jak-zacit-podnikat-od-15-let/Jak-zacit-podnikat-od-15-let.pdf'] },
-  'jak-zacit-s-doucovanim-od-15-let': { nazev: "Jak začít s doučováním", cena: 19900, soubory: ['jak-zacit-s-doucovanim-od-15-let/jak-zacit-s-doucovanim-od-15-let.pdf'] },
-  'jak-zacit-se-spravou-socialnich-siti-od-15-let': { nazev: "Jak začít se správou sociálních sítí", cena: 19900, soubory: ['jak-zacit-se-spravou-socialnich-siti-od-15-let/jak-zacit-se-spravou-socialnich-siti-od-15-let.pdf'] },
-  'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let': { nazev: "Jak začít s ruční výrobou a prodejem", cena: 19900, soubory: ['jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let/jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let.pdf'] },
-  'jak-zacit-se-sluzbami-pro-domacnost-od-15-let': { nazev: "Jak začít se službami pro domácnost a sousedy", cena: 19900, soubory: ['jak-zacit-se-sluzbami-pro-domacnost-od-15-let/jak-zacit-se-sluzbami-pro-domacnost-od-15-let.pdf'] },
-  'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let': { nazev: "Jak začít s grafikou, videem a weby s AI", cena: 19900, soubory: ['jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let.pdf'] },
-  'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let': { nazev: "Jak začít s e-booky a digitálními produkty", cena: 19900, soubory: ['jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let.pdf'] },
+  'jak-zacit-podnikat-od-15-let': { nazev: "Jak začít podnikat od 15 let", cena: 89900, soubory: ['jak-zacit-podnikat-od-15-let/Jak-zacit-podnikat-od-15-let.pdf'] },
+  'jak-zacit-s-doucovanim-od-15-let': { nazev: "Jak začít s doučováním", cena: 39900, soubory: ['jak-zacit-s-doucovanim-od-15-let/jak-zacit-s-doucovanim-od-15-let.pdf'] },
+  'jak-zacit-se-spravou-socialnich-siti-od-15-let': { nazev: "Jak začít se správou sociálních sítí", cena: 39900, soubory: ['jak-zacit-se-spravou-socialnich-siti-od-15-let/jak-zacit-se-spravou-socialnich-siti-od-15-let.pdf'] },
+  'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let': { nazev: "Jak začít s ruční výrobou a prodejem", cena: 39900, soubory: ['jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let/jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let.pdf'] },
+  'jak-zacit-se-sluzbami-pro-domacnost-od-15-let': { nazev: "Jak začít se službami pro domácnost a sousedy", cena: 39900, soubory: ['jak-zacit-se-sluzbami-pro-domacnost-od-15-let/jak-zacit-se-sluzbami-pro-domacnost-od-15-let.pdf'] },
+  'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let': { nazev: "Jak začít s grafikou, videem a weby s AI", cena: 39900, soubory: ['jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let.pdf'] },
+  'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let': { nazev: "Jak začít s e-booky a digitálními produkty", cena: 39900, soubory: ['jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let.pdf'] },
 };
 
 export async function stripe(env, cesta, data) {
