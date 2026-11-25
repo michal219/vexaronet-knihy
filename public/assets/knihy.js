@@ -9,7 +9,7 @@ window.NAKLADATELSTVI = {
   nazev: 'Nakladatelství Grindbooks',
   email: 'info@grindbooks.eu',
   web: 'https://grindbooks.eu',
-  platby: ''   // zítra po nastavení Stripe přepnout na 'stripe'
+  platby: 'stripe'   // zapnuto; bez STRIPE_SECRET_KEY na Cloudflare tlačítko ukáže „Prodej se připravuje“
 };
 
 window.KNIHY = [
