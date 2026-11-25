@@ -10,5 +10,10 @@
     "binding": "ASSETS",
     // na /api/* se vždy spustí worker.js (ne jen když tam není statický soubor)
     "run_worker_first": ["/api/*"]
-  }
+  },
+  // R2 bucket se soubory ke stažení (vazba KNIHY, čte ji functions/api/stazeni.js).
+  // Musí být i tady, jinak ji další nasazení z gitu může z Cloudflare smazat.
+  "r2_buckets": [
+    { "binding": "KNIHY", "bucket_name": "grindbooks" }
+  ]
 }
