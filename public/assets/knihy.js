@@ -32,7 +32,7 @@ window.KNIHY = [
     // ukázka k listování: strany v pořadí (první = obálka)
     ukazka: ['01','04','05','06','07','13','14','26','27','47','48','73','74','99'].map(n => `/img/knihy/vlastni-web/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/vlastni-web'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'vlastni-e-shop-pomoci-ai',
@@ -52,7 +52,7 @@ window.KNIHY = [
     perex: 'Katalog, košík, platby kartou přes Stripe, doprava, právní minimum a spuštění. Vlastní obchod bez měsíčního paušálu za platformu.',
     ukazka: ['01','04','05','06','07','23','25','30','31','39','40','55','56','99'].map(n => `/img/knihy/vlastni-eshop/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/vlastni-eshop'
-    cena: '449 Kč'
+    cena: '159 Kč'
   },
   {
     id: 'vlastni-aplikace-pomoci-ai',
@@ -72,7 +72,7 @@ window.KNIHY = [
     perex: 'Evidence zakázek s přihlášením a databází: návrh, Supabase, zabezpečení dat, testování a zveřejnění.',
     ukazka: ['01','04','05','06','07','19','20','23','24','31','32','48','49','99'].map(n => `/img/knihy/vlastni-aplikace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/vlastni-aplikace'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'jak-vytvorit-vlastniho-ai-chatbota',
@@ -92,7 +92,7 @@ window.KNIHY = [
     perex: 'AI asistent, který odpovídá zákazníkům z vašich podkladů, přizná, když neví, a předá konverzaci člověku. Okno na web, bezpečnost a testy.',
     ukazka: ['01','04','05','06','07','13','14','18','19','29','30','38','99'].map(n => `/img/knihy/vlastni-chatbot/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/ai-chatbot'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'jak-automatizovat-praci-pomoci-ai',
@@ -112,7 +112,7 @@ window.KNIHY = [
     perex: 'Poptávky, e-maily, dokumenty a denní přehledy bez programování: Make, Claude a telefon. AI navrhuje, vy rozhodujete.',
     ukazka: ['01','04','05','06','09','14','15','18','19','26','29','36','99'].map(n => `/img/knihy/automatizace/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/automatizace'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'jak-vytvorit-vlastni-software-pomoci-ai',
@@ -132,7 +132,7 @@ window.KNIHY = [
     perex: 'Vlastní CRM se zákazníky, zakázkami, přihlášením a databází. Od specifikace přes rozhraní a zabezpečení (RLS) po zveřejnění a nabídku klientům.',
     ukazka: ['01','04','05','06','09','12','17','19','20','24','29','34','99'].map(n => `/img/knihy/software/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/software'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'jak-vytvaret-profesionalni-videa-pomoci-ai',
@@ -152,7 +152,7 @@ window.KNIHY = [
     perex: '30sekundová reklama 9:16 krok za krokem: scénář, video prompty, AI záběry, voiceover, hudba, střih a titulky. Plus licence, označování AI obsahu a vyhodnocení výsledků.',
     ukazka: ['01','04','05','08','10','13','15','18','21','23','25','31','99'].map(n => `/img/knihy/video/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/video'
-    cena: '399 Kč'
+    cena: '149 Kč'
   },
   {
     id: 'gta-6-clipping-pro-zacatecniky',
@@ -172,7 +172,7 @@ window.KNIHY = [
     perex: 'GTA 6 vychází 19. listopadu a placené kampaně na klipy přibývají každý den. Zjistíš, kdo za klipy platí, kde najdeš GTA 6 kampaně i kampaně ze streamů a podcastů a jak udělat první klip. Bonus zdarma: prompt, se kterým Claude hlídá stream a sám dělá shorty. Výdělek není zaručený, ale cestu k němu dostaneš krok za krokem.',
     ukazka: ['01','03','04','05','06','07','08','10','11','13','16','19','99'].map(n => `/img/knihy/clipping/ukazka/${n}.jpg`),
     gumroad: '',   // např. 'https://grindbooks.gumroad.com/l/gta-6-clipping'
-    cena: '249 Kč'
+    cena: '99 Kč'
   },
   {
     id: 'jak-zacit-podnikat-od-15-let',
@@ -192,7 +192,7 @@ window.KNIHY = [
     perex: "Právní realita v ČR, IČO před 18. rokem, rodinná dohoda, peníze a daně, 15 nápadů a plán na 90 dní. Pro 15–17leté a jejich rodiče.",
     ukazka: ['01','04','08','09','18','28','34','49','51','99'].map(n => `/img/knihy/podnikani-15/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '349 Kč'
+    cena: '129 Kč'
   },
   {
     id: 'jak-zacit-s-doucovanim-od-15-let',
@@ -212,7 +212,7 @@ window.KNIHY = [
     perex: "První žáci, ceník, struktura lekce, bezpečnost a údaje dětí. Šablony zpráv a plán na 30 dní.",
     ukazka: ['01','04','06','07','10','15','18','24','26','99'].map(n => `/img/knihy/doucovani/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'jak-zacit-se-spravou-socialnich-siti-od-15-let',
@@ -232,7 +232,7 @@ window.KNIHY = [
     perex: "Nabídka a balíčky, měsíční plán příspěvků s AI, komunikace s klientem a licence.",
     ukazka: ['01','04','06','07','09','14','16','21','23','99'].map(n => `/img/knihy/socialni-site/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let',
@@ -252,7 +252,7 @@ window.KNIHY = [
     perex: "Bezpečné výrobky, kalkulace, fotky, prodejní kanály a práva zákazníků.",
     ukazka: ['01','04','06','07','08','12','14','18','20','99'].map(n => `/img/knihy/rucni-vyroba/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'jak-zacit-se-sluzbami-pro-domacnost-od-15-let',
@@ -272,7 +272,7 @@ window.KNIHY = [
     perex: "Bezpečné služby, nabídka, odpovědnost a první zákazníci ve vašem okolí.",
     ukazka: ['01','04','06','07','08','12','14','18','20','99'].map(n => `/img/knihy/sluzby-domacnost/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let',
@@ -292,7 +292,7 @@ window.KNIHY = [
     perex: "Licence, zadání od klienta, revize, cena a portfolio. S pomocí AI.",
     ukazka: ['01','04','06','07','12','13','17','19','99'].map(n => `/img/knihy/kreativa-ai/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let',
@@ -312,7 +312,7 @@ window.KNIHY = [
     perex: "Téma a poptávka, tvorba e-booku nebo šablony s AI, cena, prodej s ohledem na věk a pasti na internetu.",
     ukazka: ['01','04','06','07','09','14','16','22','24','99'].map(n => `/img/knihy/digitalni-produkty/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '199 Kč'
+    cena: '79 Kč'
   },
   {
     id: 'cold-calling-pro-zacatecniky',
@@ -332,6 +332,6 @@ window.KNIHY = [
     perex: 'Pravidla v ČR, skripty hovoru, odpovědi na námitky, tabulka kontaktů, trénink s AI a plán na 14 dní.',
     ukazka: ['01','04','06','07','10','16','18','25','27','99'].map(n => `/img/knihy/cold-calling/ukazka/${n}.jpg`),
     gumroad: '',
-    cena: '249 Kč'
+    cena: '99 Kč'
   }
 ];
