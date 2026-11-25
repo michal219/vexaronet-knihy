@@ -16,8 +16,8 @@ jako statický soubor z `public/`. Nasazení = `git push` do `main`; Cloudflare 
 ## Spuštění prodeje přes Stripe
 1. Cloudflare dashboard → Workers & Pages → tenhle projekt → **Settings → Variables and Secrets**:
    **Add → Secret**, název `STRIPE_SECRET_KEY`, hodnota = tajný klíč ze Stripe (`sk_live_…`, pro zkoušku `sk_test_…`).
-2. Cloudflare → **R2** → vytvořit bucket (např. `grindbooks-knihy`) a nahrát soubory přesně podle cest v `functions/_katalog.js`.
-3. Tenhle projekt → **Settings → Bindings → Add → R2 bucket**: proměnná `KNIHY`, bucket z kroku 2.
+2. Cloudflare → **R2** → vytvořit bucket (u nás `grindbooks`) a nahrát soubory přesně podle cest v `functions/_katalog.js`.
+3. Vazba `KNIHY` → bucket `grindbooks` je zapsaná ve `wrangler.jsonc` (`r2_buckets`).
 4. Stripe → Settings → Public details: vyplnit adresu podmínek (…/podminky/), aby Stripe zobrazil zaškrtávací souhlas.
 5. V `public/assets/knihy.js` nastavit `platby: 'stripe'`, doplnit údaje prodávajícího v `public/podminky/` a nasadit.
 6. Zkušební nákup testovací kartou 4242 4242 4242 4242 (s klíčem sk_test_…), pak přepnout na sk_live_….
