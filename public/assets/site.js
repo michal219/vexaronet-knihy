@@ -390,8 +390,14 @@ document.querySelectorAll('.duo-books .db, .b2').forEach(el => {
   });
   // pruh s odpočtem, když běží nabídka
   if (location.pathname.startsWith('/nabidka')) return;
+  const home = document.getElementById('nabidka-home');
   fetch('/api/nabidka').then(r => r.json()).then(s => {
     if (!s.aktivni) return;
+    if (home) {
+      const end0 = Date.parse(s.do), H = document.getElementById('nh-h'), M = document.getElementById('nh-m'), S = document.getElementById('nh-s');
+      const tk = () => { const d = Math.max(0, Math.floor((end0 - Date.now()) / 1000)); if (!d) { home.hidden = true; return; } H.textContent = String(Math.floor(d / 3600)).padStart(2, '0'); M.textContent = String(Math.floor(d % 3600 / 60)).padStart(2, '0'); S.textContent = String(d % 60).padStart(2, '0'); };
+      tk(); setInterval(tk, 1000); home.hidden = false; return;
+    }
     const bar = document.createElement('div'); bar.id = 'promobar';
     bar.innerHTML = '🔥 Jen 48 hodin: <b>8 e-booků o podnikání za cenu jedné knihy (129 Kč)</b>. Zbývá <span id="pbt"></span> · <a href="/nabidka/">Zobrazit nabídku</a><button type="button" aria-label="Zavřít">×</button>';
     document.body.insertBefore(bar, document.body.firstChild);
