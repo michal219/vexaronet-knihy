@@ -360,3 +360,44 @@ document.querySelectorAll('.duo-books .db, .b2').forEach(el => {
     });
   });
 })();
+
+/* ---- Slevový kód a časově omezená nabídka ---- */
+(function () {
+  const get = () => { try { return sessionStorage.getItem('kod') || ''; } catch (_) { return ''; } };
+  const set = v => { try { v ? sessionStorage.setItem('kod', v) : sessionStorage.removeItem('kod'); } catch (_) {} };
+  // kód z odkazu (?kod=...) se zapamatuje
+  const q = new URLSearchParams(location.search).get('kod'); if (q) set(q.trim().toUpperCase().slice(0, 40));
+  // každé tlačítko Koupit dostane uložený kód
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a[href^="/api/koupit"]');
+    if (!a) return; const k = get(); if (!k || /[?&]kod=/.test(a.getAttribute('href'))) return;
+    e.preventDefault(); location.href = a.getAttribute('href') + '&kod=' + encodeURIComponent(k);
+  });
+  // pole „Máš slevový kód?“ v nákupním boxu
+  const st = document.createElement('style');
+  st.textContent = '.kod{margin-top:12px;font-size:14px}.kod>button{background:none;border:0;color:inherit;opacity:.8;text-decoration:underline;cursor:pointer;font:inherit}.kod form{display:flex;gap:8px;margin-top:8px;justify-content:center}.kod input{flex:1;min-width:0;max-width:200px;padding:10px 12px;border-radius:10px;border:2px solid rgba(128,128,128,.4);font:inherit;text-transform:uppercase;background:rgba(255,255,255,.9);color:#0f203d}.kod form button{padding:10px 16px;border-radius:10px;border:0;background:#2ec4b6;color:#05203a;font-weight:800;cursor:pointer;font:inherit;font-weight:800}.kod .ok{margin-top:6px;font-weight:700}' +
+    '#promobar{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#ff7a59,#ffb347);color:#1a1033;text-align:center;font-weight:800;font-size:15px;padding:9px 44px 9px 14px;line-height:1.35}#promobar a{color:inherit;text-decoration:underline}#promobar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:22px;cursor:pointer;color:inherit;line-height:1}';
+  document.head.appendChild(st);
+  document.querySelectorAll('.buybox').forEach(b => {
+    const w = document.createElement('div'); w.className = 'kod';
+    const cur = get();
+    w.innerHTML = '<button type="button">Máš slevový kód?</button><form hidden><input type="text" placeholder="KÓD" maxlength="40" aria-label="Slevový kód"><button type="submit">Použít</button></form><div class="ok"></div>';
+    const btn = w.querySelector('button'), f = w.querySelector('form'), ok = w.querySelector('.ok');
+    if (cur) { ok.textContent = 'Kód ' + cur + ' je uložený, uplatní se při platbě.'; }
+    btn.addEventListener('click', () => { f.hidden = !f.hidden; if (!f.hidden) f.querySelector('input').focus(); });
+    f.addEventListener('submit', e => { e.preventDefault(); const v = f.querySelector('input').value.trim().toUpperCase(); if (!v) return; set(v); ok.textContent = 'Kód ' + v + ' je uložený. Uplatní se po kliknutí na Koupit.'; f.hidden = true; });
+    b.appendChild(w);
+  });
+  // pruh s odpočtem, když běží nabídka
+  if (location.pathname.startsWith('/nabidka')) return;
+  fetch('/api/nabidka').then(r => r.json()).then(s => {
+    if (!s.aktivni) return;
+    const bar = document.createElement('div'); bar.id = 'promobar';
+    bar.innerHTML = '🔥 Jen 48 hodin: <b>8 e-booků o podnikání za cenu jedné knihy (129 Kč)</b>. Zbývá <span id="pbt"></span> · <a href="/nabidka/">Zobrazit nabídku</a><button type="button" aria-label="Zavřít">×</button>';
+    document.body.insertBefore(bar, document.body.firstChild);
+    const t = bar.querySelector('#pbt'); const end = Date.parse(s.do);
+    const tick = () => { let d = Math.max(0, Math.floor((end - Date.now()) / 1000)); if (!d) { bar.remove(); return; } const h = Math.floor(d / 3600), m = Math.floor(d % 3600 / 60), sec = d % 60; t.textContent = h + ' h ' + String(m).padStart(2, '0') + ' min ' + String(sec).padStart(2, '0') + ' s'; };
+    tick(); setInterval(tick, 1000);
+    bar.querySelector('button').addEventListener('click', () => bar.remove());
+  }).catch(() => {});
+})();
