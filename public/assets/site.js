@@ -327,3 +327,36 @@ document.querySelectorAll('.duo-books .db, .b2').forEach(el => {
     book.classList.add('live'); book.style.setProperty('--rx', (base.rx - py * 14) + 'deg'); book.style.setProperty('--ry', (base.ry + px * 36) + 'deg'); });
   el.addEventListener('pointerleave', () => { book.classList.remove('live'); book.style.setProperty('--rx', base.rx + 'deg'); book.style.setProperty('--ry', base.ry + 'deg'); });
 });
+
+/* ---- Přihlášení k novinkám (e-mail) ---- */
+(function () {
+  const holders = document.querySelectorAll('[data-signup]');
+  if (!holders.length) return;
+  const st = document.createElement('style');
+  st.textContent = '.su{max-width:560px;margin:0 auto;text-align:left}.su h3{font-size:22px;margin-bottom:6px}.su p.s{font-size:15px;color:var(--g);margin-bottom:14px}.su form{display:flex;flex-direction:column;gap:12px}.su .r{display:flex;gap:10px;flex-wrap:wrap}.su input[type=email]{flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:14px;border:2px solid var(--line);font:inherit;background:#fff;color:var(--ink)}.su input[type=email]:focus{outline:none;border-color:var(--t)}.su button{padding:15px 26px;border-radius:14px;border:0;background:var(--t);color:#05203a;font:inherit;font-weight:800;cursor:pointer}.su button:disabled{opacity:.6;cursor:default}.su label.c{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.45;color:var(--g);cursor:pointer}.su label.c input{margin-top:3px;flex:none;width:18px;height:18px;accent-color:#138a80}.su .m{font-size:15px;font-weight:700;min-height:22px}.su .m.ok{color:var(--td)}.su .m.er{color:#c0392b}.su .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}.su a{color:var(--td)}.dark .su p.s,.dark .su label.c{color:#b9c8dc}';
+  document.head.appendChild(st);
+  holders.forEach(h => {
+    const zdroj = h.getAttribute('data-signup') || location.pathname;
+    h.innerHTML = '<div class="su"><h3 class="serif">Nové knihy a ukázky jako první</h3><p class="s">Pošleme ti nové e-booky, ukázky zdarma a slevy. Žádný spam, odhlásit se můžeš kdykoli.</p>' +
+      '<form novalidate><div class="r"><input type="email" name="email" placeholder="tvuj@email.cz" autocomplete="email" required aria-label="E-mail"><button type="submit">Chci novinky</button></div>' +
+      '<input class="hp" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+      '<label class="c"><input type="checkbox" name="souhlas"><span>Souhlasím se zasíláním novinek, ukázek a slev na e-mail a potvrzuji, že mi je alespoň 15 let. Údaje zpracovává Veronika Hřivnáčová, IČO 18020844, popis najdeš v <a href="/soukromi/">zásadách soukromí</a>. Souhlas můžu kdykoli odvolat na <a href="/odhlaseni/">této stránce</a>.</span></label>' +
+      '<div class="m" role="status" aria-live="polite"></div></form></div>';
+    const f = h.querySelector('form'), m = h.querySelector('.m'), b = f.querySelector('button');
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      const email = f.email.value.trim();
+      m.className = 'm';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { m.classList.add('er'); m.textContent = 'Zadej prosím platný e-mail.'; return; }
+      if (!f.souhlas.checked) { m.classList.add('er'); m.textContent = 'Zaškrtni prosím souhlas a potvrzení věku.'; return; }
+      b.disabled = true; m.textContent = 'Odesíláme…';
+      try {
+        const r = await fetch('/api/prihlaska', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, souhlas: true, vek: true, zdroj, web: f.web.value }) });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok && j.ok) { m.classList.add('ok'); m.textContent = j.uz ? 'Tenhle e-mail už v seznamu máme. Díky!' : 'Hotovo, díky! Jsi v seznamu. 📬'; f.email.value = ''; }
+        else { m.classList.add('er'); m.textContent = j.chyba || 'Něco se nepovedlo. Zkus to prosím znovu.'; }
+      } catch (_) { m.classList.add('er'); m.textContent = 'Něco se nepovedlo. Zkus to prosím znovu.'; }
+      b.disabled = false;
+    });
+  });
+})();
