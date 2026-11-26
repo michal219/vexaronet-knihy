@@ -10,7 +10,7 @@ export async function onRequestGet({ request, env }) {
     const t = url.searchParams.get('token') || '';
     if (!env.ADMIN_TOKEN || t.length !== env.ADMIN_TOKEN.length || t !== env.ADMIN_TOKEN) return new Response('Nenalezeno', { status: 404 });
     if (!env.KNIHY) return json({ ok: false, chyba: 'Úložiště není připojené.' }, 503);
-    if (zrusit) { await env.KNIHY.delete(NABIDKA_KLIC); return json({ ok: true, aktivni: false }); }
+    if (zrusit) { await env.KNIHY.put(NABIDKA_KLIC, JSON.stringify({ start: new Date().toISOString(), do: new Date().toISOString() }), { httpMetadata: { contentType: 'application/json' } }); return json({ ok: true, aktivni: false }); }
     const s = await stavNabidky(env);
     if (s.aktivni) return json({ ok: true, aktivni: true, do: s.do, zprava: 'Nabídka už běží.' });
     const do_ = new Date(Date.now() + 48 * 3600 * 1000).toISOString();
