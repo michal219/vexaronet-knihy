@@ -30,10 +30,12 @@ export const KODY = {
   'PODNIKAM48': { typ: 'balicek', pro: ['jak-zacit-podnikat-od-15-let', 'balicek-podnikani-od-15-let'], balicek: 'balicek-podnikani-od-15-let', okno: 'nabidka' },
 };
 export const NABIDKA_KLIC = 'nabidka/stav.json';
+// Výchozí konec nabídky: platí, dokud ji nikdo nespustí/nezruší ručně přes /api/nabidka (pak platí stav v R2).
+export const NABIDKA_DO_VYCHOZI = '2026-11-28T15:00:00Z';
 export async function stavNabidky(env) {
   try {
     const o = env.KNIHY && await env.KNIHY.get(NABIDKA_KLIC);
-    if (!o) return { aktivni: false };
+    if (!o) { const d = Date.parse(env.NABIDKA_DO || NABIDKA_DO_VYCHOZI); return { aktivni: Number.isFinite(d) && Date.now() < d, do: new Date(d).toISOString() }; }
     const s = await o.json();
     const do_ = Date.parse(s.do);
     return { aktivni: Number.isFinite(do_) && Date.now() < do_, do: s.do };
