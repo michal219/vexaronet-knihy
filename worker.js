@@ -7,6 +7,7 @@ import { onRequestGet as stazeniGet } from './functions/api/stazeni.js';
 import { onRequestPost as prihlaskaPost } from './functions/api/prihlaska.js';
 import { onRequestPost as odhlaseniPost } from './functions/api/odhlaseni.js';
 import { onRequestGet as prihlaskyGet } from './functions/api/prihlasky.js';
+import { onRequestGet as nabidkaGet } from './functions/api/nabidka.js';
 
 const ROUTES = {
   'GET /api/koupit': koupitGet,
@@ -14,6 +15,7 @@ const ROUTES = {
   'POST /api/prihlaska': prihlaskaPost,
   'POST /api/odhlaseni': odhlaseniPost,
   'GET /api/prihlasky': prihlaskyGet,
+  'GET /api/nabidka': nabidkaGet,
 };
 
 export default {

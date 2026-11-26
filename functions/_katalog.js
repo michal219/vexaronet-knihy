@@ -17,8 +17,41 @@ export const KATALOG = {
   'jak-zacit-se-sluzbami-pro-domacnost-od-15-let': { nazev: "Jak začít se službami pro domácnost a sousedy", cena: 7900, soubory: ['jak-zacit-se-sluzbami-pro-domacnost-od-15-let/jak-zacit-se-sluzbami-pro-domacnost-od-15-let.pdf'] },
   'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let': { nazev: "Jak začít s grafikou, videem a weby s AI", cena: 7900, soubory: ['jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let.pdf'] },
   'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let': { nazev: "Jak začít s e-booky a digitálními produkty", cena: 7900, soubory: ['jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let.pdf'] },
+  // Balíček za cenu hlavní knihy: prodává se JEN se slevovým kódem (viz KODY a /api/nabidka), není v katalogu na webu.
+  'balicek-podnikani-od-15-let': { nazev: 'Balíček Podnikání od 15 let (8 e-booků)', cena: 12900, jenSKodem: true, soubory: ['jak-zacit-podnikat-od-15-let/Jak-zacit-podnikat-od-15-let.pdf', 'jak-zacit-podnikat-od-15-let/Podnikani-od-15-let-tabulky.xlsx', 'jak-zacit-s-doucovanim-od-15-let/jak-zacit-s-doucovanim-od-15-let.pdf', 'jak-zacit-se-spravou-socialnich-siti-od-15-let/jak-zacit-se-spravou-socialnich-siti-od-15-let.pdf', 'jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let/jak-zacit-s-rucni-vyrobou-a-prodejem-od-15-let.pdf', 'jak-zacit-se-sluzbami-pro-domacnost-od-15-let/jak-zacit-se-sluzbami-pro-domacnost-od-15-let.pdf', 'jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let/jak-zacit-s-grafikou-videem-a-weby-s-ai-od-15-let.pdf', 'jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let/jak-zacit-s-ebooky-a-digitalnimi-produkty-od-15-let.pdf', 'cold-calling-pro-zacatecniky/cold-calling-pro-zacatecniky.pdf'] },
   'cold-calling-pro-zacatecniky': { nazev: 'Cold calling pro začátečníky', cena: 9900, soubory: ['cold-calling-pro-zacatecniky/cold-calling-pro-zacatecniky.pdf'] },
 };
+
+
+// Slevové kódy. typ 'balicek': při koupi knihy z `pro` se prodá `balicek` (nebo přímo balíček) za jeho cenu.
+// okno 'nabidka' = kód platí jen když je zapnutá časově omezená nabídka (48 h od spuštění, viz /api/nabidka).
+// typ 'procenta': sleva `procent` % na knihy z `pro` ('*' = všechny), platí do data `do`.
+export const KODY = {
+  'PODNIKAM48': { typ: 'balicek', pro: ['jak-zacit-podnikat-od-15-let', 'balicek-podnikani-od-15-let'], balicek: 'balicek-podnikani-od-15-let', okno: 'nabidka' },
+};
+export const NABIDKA_KLIC = 'nabidka/stav.json';
+export async function stavNabidky(env) {
+  try {
+    const o = env.KNIHY && await env.KNIHY.get(NABIDKA_KLIC);
+    if (!o) return { aktivni: false };
+    const s = await o.json();
+    const do_ = Date.parse(s.do);
+    return { aktivni: Number.isFinite(do_) && Date.now() < do_, do: s.do };
+  } catch { return { aktivni: false }; }
+}
+// vrací { ok, id, cena } nebo { ok:false, zprava }
+export async function uplatnitKod(env, kod, id) {
+  const d = KODY[kod];
+  if (!d) return { ok: false, zprava: 'Tenhle slevový kód neznáme. Zkontroluj ho prosím.' };
+  if (d.okno === 'nabidka') {
+    const s = await stavNabidky(env);
+    if (!s.aktivni) return { ok: false, zprava: 'Tahle nabídka už skončila nebo ještě nezačala.' };
+  } else if (d.do && Date.now() > Date.parse(d.do)) return { ok: false, zprava: 'Platnost kódu skončila.' };
+  if (!(d.pro === '*' || (d.pro || []).includes(id))) return { ok: false, zprava: 'Tenhle kód se na vybranou knihu nevztahuje.' };
+  if (d.typ === 'balicek') return { ok: true, id: d.balicek };
+  if (d.typ === 'procenta') return { ok: true, id, procent: d.procent };
+  return { ok: false, zprava: 'Kód nelze použít.' };
+}
 
 export async function stripe(env, cesta, data) {
   const init = { headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}` } };

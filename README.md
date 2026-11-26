@@ -23,3 +23,9 @@ jako statický soubor z `public/`. Nasazení = `git push` do `main`; Cloudflare 
 6. Zkušební nákup testovací kartou 4242 4242 4242 4242 (s klíčem sk_test_…), pak přepnout na sk_live_….
 
 Plné PDF nikdy nedávat do repozitáře (je veřejný) – patří jen do R2.
+
+## Slevový kód a časově omezená nabídka (balíček Podnikání od 15 let)
+- Kódy jsou v `functions/_katalog.js` (`KODY`). `PODNIKAM48` změní nákup hlavní knihy na **balíček 8 e-booků za 129 Kč** (`balicek-podnikani-od-15-let`, prodává se jen s kódem).
+- Kód platí jen, když běží nabídka. Spuštění na 48 hodin od teď (potřebuje secret `ADMIN_TOKEN` na Cloudflare):
+  `https://grindbooks.eu/api/nabidka?spustit=1&token=TVOJE_HESLO` (ukončení: `?zrusit=1&token=...`). Stav nabídky je v R2 (`nabidka/stav.json`).
+- Stránka nabídky s odpočtem: `/nabidka/`. Když nabídka běží, na všech stránkách je nahoře pruh s odpočtem.
