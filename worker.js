@@ -4,10 +4,16 @@
 // se v tomto novém (Workers Builds) nastavení sama nespouští – proto je sem potřeba explicitně napojit.
 import { onRequestGet as koupitGet } from './functions/api/koupit.js';
 import { onRequestGet as stazeniGet } from './functions/api/stazeni.js';
+import { onRequestPost as prihlaskaPost } from './functions/api/prihlaska.js';
+import { onRequestPost as odhlaseniPost } from './functions/api/odhlaseni.js';
+import { onRequestGet as prihlaskyGet } from './functions/api/prihlasky.js';
 
 const ROUTES = {
   'GET /api/koupit': koupitGet,
   'GET /api/stazeni': stazeniGet,
+  'POST /api/prihlaska': prihlaskaPost,
+  'POST /api/odhlaseni': odhlaseniPost,
+  'GET /api/prihlasky': prihlaskyGet,
 };
 
 export default {

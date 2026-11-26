@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odhlášení z novinek | Nakladatelství Grindbooks</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Grindbooks</b><small>Nakladatelství</small></span></a>
+  <ul><li><a href="/#katalog">Katalog</a></li><li><a href="/podminky/">Podmínky nákupu</a></li></ul>
+  <a class="btn sm" href="/#katalog">Katalog e-booků</a>
+</div></header>
+<main class="nf"><div style="position:relative;max-width:560px;width:100%">
+<h1 class="serif" style="font-size:clamp(30px,5vw,46px)">Odhlášení z novinek</h1>
+<p>Zadej e-mail, který chceš odhlásit. Smažeme ho ze seznamu a už ti nic nepošleme.</p>
+<form id="od" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:22px 0"><input type="email" id="em" placeholder="tvuj@email.cz" required style="flex:1 1 240px;padding:15px 18px;border-radius:14px;border:2px solid rgba(255,255,255,.25);font:inherit;background:rgba(255,255,255,.08);color:#fff"><button class="btn" type="submit">Odhlásit</button></form>
+<p id="zp" style="font-weight:700;min-height:26px"></p>
+<a class="btn ghost" href="/">Zpět do nakladatelství</a></div></main>
+<script>
+document.getElementById('od').addEventListener('submit',async e=>{e.preventDefault();const zp=document.getElementById('zp');zp.textContent='Odesíláme…';
+try{const r=await fetch('/api/odhlaseni',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('em').value})});const j=await r.json().catch(()=>({}));
+zp.textContent=(r.ok&&j.ok)?'Hotovo, e-mail je odhlášený.':(j.chyba||'Něco se nepovedlo. Napiš nám na info@grindbooks.eu.');}catch(_){zp.textContent='Něco se nepovedlo. Napiš nám na info@grindbooks.eu.';}});
+</script>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><a class="logo" href="/"><img src="/img/logo.png" alt=""><span><b>Grindbooks</b><small>Nakladatelství</small></span></a>
+      <p style="margin-top:14px;max-width:340px">Praktické české e-booky, podle kterých věci opravdu uděláte.</p></div>
+    <div><h4>E-booky</h4><ul><li><a href="/kniha/vlastni-web-pomoci-ai/">Vlastní web pomocí AI</a></li><li><a href="/#katalog">Celý katalog</a></li></ul></div>
+    <div><h4>Kontakt</h4><ul><li><a href="mailto:info@grindbooks.eu">info@grindbooks.eu</a></li><li><a href="https://grindbooks.eu">grindbooks.eu</a></li><li><a href="/podminky/">Podmínky nákupu</a></li><li><a href="/soukromi/">Ochrana soukromí</a></li></ul></div>
+  </div>
+  <div class="legal">© 2026 Tým Grindbooks. Platby zpracovává Stripe. Claude a Claude Code jsou ochranné známky společnosti Anthropic; naše e-booky nejsou oficiálními produkty společnosti Anthropic.</div>
+</div></footer>
+<script src="/assets/knihy.js?v=20261127"></script>
+<script src="/assets/site.js?v=20261127"></script>
+</body>
+</html>
